@@ -1,4 +1,5 @@
 const colors = require("tailwindcss/colors");
+const { borderColor } = require("tailwindcss/defaultTheme");
 
 module.exports = {
   purge: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
@@ -33,7 +34,11 @@ module.exports = {
     },
   },
   variants: {
-    extend: { borderColor: ["focus-visible"], opacity: ["disabled"] },
+    extend: {
+      borderColor: ["focus-visible", "active"],
+      opacity: ["disabled", "hover", "active"],
+      backgroundColor: ["active"],
+    },
   },
   plugins: [
     require("@tailwindcss/forms"),

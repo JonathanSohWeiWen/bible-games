@@ -10,8 +10,11 @@ interface ToggleProps {
 const Toggle = ({ initialState, label, onChange }: ToggleProps) => {
   const [enabled, setEnabled] = useState(initialState);
   return (
-    <>
-      <Switch.Group as="div" className="flex items-center space-x-4">
+    <div className="my-4">
+      <Switch.Group
+        as="div"
+        className="flex justify-center md:justify-start items-center space-x-4"
+      >
         <Switch.Label>{label}</Switch.Label>
         <Switch
           as="button"
@@ -32,7 +35,7 @@ const Toggle = ({ initialState, label, onChange }: ToggleProps) => {
           />
         </Switch>
       </Switch.Group>
-    </>
+    </div>
   );
 };
 
