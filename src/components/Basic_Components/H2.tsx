@@ -9,7 +9,7 @@ interface H2Props {
 const H2 = ({ text, marginLeft = "0", color = "black" }: H2Props) => {
   return (
     <h2
-      className={`text-center md:text-left  text-4xl py-3 pl-${marginLeft}`}
+      className={`text-center md:text-left text-4xl py-3 pl-${marginLeft}`}
       style={{ color: color }}
     >
       {text}

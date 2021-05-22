@@ -17,7 +17,7 @@ const Input = ({
 }: TextInputProps) => {
   return (
     <input
-      className="block shadow-sm rounded-lg border-gray-300 text-left min-w-max w-1/2 my-5 text-xl font-medium mx-auto md:mx-0"
+      className=" block shadow-sm rounded-lg border-gray-300 text-left w-full my-5 text-sm md:text-xl font-medium mx-auto md:mx-0"
       type={type}
       placeholder={placeholder}
       name={name}
