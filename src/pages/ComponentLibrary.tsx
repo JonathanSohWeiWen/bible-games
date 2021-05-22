@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { CopyBlock, dracula } from "react-code-blocks";
 import Toggle from "../components/Basic_Components/Toggle";
-import Input from "../components/Basic_Components/Input";
+import Input, { BorderBottomInput } from "../components/Basic_Components/Input";
 import H1 from "../components/Basic_Components/H1";
 import H2 from "../components/Basic_Components/H2";
 import Button, {
@@ -98,11 +98,45 @@ const ComponentLibrary = () => {
           />
         </Template>
         <Template
+          componentName="Borderless Input"
+          code={`export const BorderBottomInput = ({
+            type,
+            placeholder = "",
+            name,
+            textAlignment = "left",
+            value,
+            onChange,
+          }: TextInputProps) => {
+            return (
+              <input
+                className={\`text-\${textAlignment} block shadow-sm border-0
+                border-b-4border-gray-700 text-left w-full my-5 text-sm
+                md:text-xlfont-medium mx-auto md:mx-0 focus:ring-0
+                focus:border-gray-800\`}
+                type={type}
+                placeholder={placeholder}
+                name={name}
+                value={value}
+                onChange={onChange}
+              />
+            );
+          };`}
+        >
+          <BorderBottomInput
+            type="text"
+            name="someInput"
+            value={""}
+            onChange={(e) => console.log("change text")}
+          />
+        </Template>
+        <Template
           componentName="Default Button"
           code={`<button
           className={\`\${
             !disabled && "hover:bg-blue-400"
-          } focus:outline-none bg-blue-500 text-white border-blue-500 rounded-md p-2 active:bg-blue-700 active:border-blue-700  disabled:opacity-50\`}
+          } focus:outline-none bg-blue-500 text-white border-blue-500
+          rounded-md p-2 active:bg-blue-700 active:border-blue-700
+          disabled:opacity-50\`}
           disabled={disabled}
           onClick={onClick}
         >`}
@@ -125,7 +159,9 @@ const ComponentLibrary = () => {
           code={`<button
           className={\`\${
             !disabled && "hover:bg-grey-400"
-          } focus:outline-none bg-grey-500 text-white border-grey-500 rounded-md p-2 active:bg-grey-700 active:border-grey-700  disabled:opacity-50\`}
+          } focus:outline-none bg-grey-500 text-white border-grey-500
+          rounded-md p-2 active:bg-grey-700 active:border-grey-700
+          disabled:opacity-50\`}
           disabled={disabled}
           onClick={onClick}
         >`}
@@ -148,7 +184,9 @@ const ComponentLibrary = () => {
           code={`<button
           className={\`\${
             !disabled && "hover:bg-green-400"
-          } focus:outline-none bg-green-500 text-white border-green-500 rounded-md p-2 active:bg-green-700 active:border-green-700  disabled:opacity-50\`}
+          } focus:outline-none bg-green-500 text-white border-green-500
+          rounded-md p-2 active:bg-green-700 active:border-green-700
+          disabled:opacity-50\`}
           disabled={disabled}
           onClick={onClick}
         >`}
@@ -171,7 +209,9 @@ const ComponentLibrary = () => {
           code={`<button
           className={\`\${
             !disabled && "hover:bg-red-400"
-          } focus:outline-none bg-red-500 text-white border-red-500 rounded-md p-2 active:bg-red-700 active:border-red-700  disabled:opacity-50\`}
+          } focus:outline-none bg-red-500 text-white border-red-500
+          rounded-md p-2 active:bg-red-700 active:border-red-700
+          disabled:opacity-50\`}
           disabled={disabled}
           onClick={onClick}
         >`}
@@ -238,10 +278,12 @@ const ComponentLibrary = () => {
                           leaveFrom="opacity-100"
                           leaveTo="opacity-0"
                         >
-                          <Dialog.Overlay className="fixed inset-0 bg-gray-500 opacity-30" />
+                          <Dialog.Overlay className="fixed inset-0 
+                        bg-gray-500 opacity-30" />
                         </Transition.Child>
           
-                        {/* This element is to trick the browser into centering the modal contents. */}
+                        {/* This element is to trick the browser into
+                        centering the modal contents. */}
                         <span
                           className="inline-block h-screen align-middle"
                           aria-hidden="true"
@@ -257,7 +299,8 @@ const ComponentLibrary = () => {
                           leaveFrom="opacity-100 scale-100"
                           leaveTo="opacity-0 scale-95"
                         >
-                          <div className="inline-block w-full max-w-md p-6 my-8 overflow-hidden text-left align-middle
+                          <div className="inline-block w-full max-w-md
+                          p-6 my-8 overflow-hidden text-left align-middle
                           transition-all transform bg-white shadow-xl rounded-2xl focus">
                             <div className="flex  justify-between">
                               {dialogTitle && (
@@ -270,7 +313,8 @@ const ComponentLibrary = () => {
                               )}
                               <button
                                 type="button"
-                                className="focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2
+                                className="focus:outline-none focus-visible:ring-2
+                                focus-visible:ring-offset-2
                                 focus-visible:ring-red-500"
                                 onClick={() => setShowModal(false)}
                               >

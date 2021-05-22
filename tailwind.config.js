@@ -38,6 +38,7 @@ module.exports = {
       borderColor: ["focus-visible", "active"],
       opacity: ["disabled", "hover", "active"],
       backgroundColor: ["active"],
+      outline: ["focus", "active"],
       // colors: ["focus", "hover"],
     },
   },
